@@ -1,8 +1,12 @@
 from datetime import datetime
 
 
-def read_line(file_path, line_num):
-    # Opens input file and returns the wanted line
+def read_line(file_path, line_num)-> str:
+    """
+    this functions pens input file and returns the wanted line.
+    @param: file_path: a path to a file
+    @param line_num: number of a wanted line from the file
+    @return: line from the file
     try:
         with open(file_path, 'r') as input_file:
             content = input_file.readlines()
@@ -20,6 +24,8 @@ def read_line(file_path, line_num):
     except Exception as unknown:
         write_error_to_file(unknown.__str__())
         input_file.close()
+    finally:
+        input_file.close()
 
 
 def write_error_to_file(error_message):
@@ -28,3 +34,4 @@ def write_error_to_file(error_message):
 
     with open('log.txt', 'a') as errors:
         errors.write(f'{error_message} {dt_string} \n')
+        

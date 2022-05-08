@@ -8,7 +8,7 @@ class File:
         body (str): File content.
 
     Attributes:
-         file_name (str): The name of the file.
+        file_name (str): The name of the file.
         user (User): The user who created the file.
         file_size (double): The file size in KB.
         body (str): File content.
@@ -21,7 +21,11 @@ class File:
         self.body = body
 
     def read(self, user):
-        """ Returns the file content of the file only if the user who wants to read is an admin or the file author."""
+        """ 
+        Returns the file content of the file only if the user who wants to read is an admin or the file author.
+        @param user: user object
+        @return: message body
+        """
         if user.user_name == self.author or user.isAdmin:
             return self.body
         else:

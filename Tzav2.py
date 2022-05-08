@@ -64,11 +64,13 @@ class PostOffice:
                         user_messages.append(message.body)
         return user_messages
 
-    def search_inbox(self, recipient, part_of_message):
+    def search_inbox(self, recipient, part_of_message) ->list:
+        """
+        this function returns list of messages
+        @param recipient: user name who recives the message.
+        @param part_of_message: part of message to find
+        @return: list of messages that contains the wanted string
         user_box = self.boxes[recipient]
-        user_messages = []
-
-        for message in user_box:
-            if part_of_message in message.body:
-                user_messages.append(message.body)
+        user_messages = [message.body for message in user_box if part_of_message in message.body]
+   
         return user_messages

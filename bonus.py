@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-def read_line(file_path, line_num)-> str:
+def read_line(file_path : str, line_num : int)-> str:
     """
     this functions pens input file and returns the wanted line.
     @param: file_path: a path to a file
@@ -32,6 +32,6 @@ def write_error_to_file(error_message):
     # Prints the exception to the files including the message and time stamp
     dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
-    with open('log.txt', 'a') as errors:
-        errors.write(f'{error_message} {dt_string} \n')
+    with open("log.txt", 'a') as errors:
+        errors.write(f"{error_message} {dt_string} \n")
         

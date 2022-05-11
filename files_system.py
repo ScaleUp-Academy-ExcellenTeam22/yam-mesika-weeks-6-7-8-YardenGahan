@@ -14,13 +14,13 @@ class File:
         body (str): File content.
     """
 
-    def __init__(self, file_name, user, file_size, body):
+    def __init__(self, file_name : str, user : User, file_size : int, body : str):
         self.name = file_name
         self.author = user
         self.size = file_size
         self.body = body
 
-    def read(self, user):
+    def read(self, user : User):
         """ 
         Returns the file content of the file only if the user who wants to read is an admin or the file author.
         @param user: user object
@@ -73,7 +73,7 @@ class User:
         is_admin (bool): 'True' if the user is an admin.
     """
 
-    def __init__(self, user_name, password, is_admin=False):
+    def __init__(self, user_name : str, password : str, is_admin=False):
         self.user_name = user_name
         self.password = password
         self.is_admin = is_admin

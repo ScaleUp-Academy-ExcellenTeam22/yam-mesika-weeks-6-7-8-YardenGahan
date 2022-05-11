@@ -64,7 +64,7 @@ class PostOffice:
                         user_messages.append(message.body)
         return user_messages
 
-    def search_inbox(self, recipient, part_of_message) ->list:
+    def search_inbox(self, recipient : str, part_of_message : str) ->list:
         """
         this function returns list of messages
         @param recipient: user name who recives the message.
